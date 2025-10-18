@@ -31,6 +31,13 @@ jobs:
           VITE_DEPLOY_BASE: /office-portfolio/
         run: npm run build
 
+      - name: Debug build output
+        run: |
+          echo "Listing dist root:"
+          ls -1 dist | head -n 20
+          echo "First 200 chars of dist/index.html:"
+          head -c 200 dist/index.html || true
+
       - name: SPA 404 fallback
         run: cp dist/index.html dist/404.html
 
