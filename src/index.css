@@ -50,12 +50,12 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   position: relative;
-  cursor: url('/lego-cursor-small.png') 0 0, auto;
+  cursor: url('./lego-cursor-small.png') 0 0, auto;
 }
 
 /* Batman cursor on clickable elements */
 a, button, .btn, [role="button"], input[type="button"], input[type="submit"], input[type="checkbox"], input[type="radio"] {
-  cursor: url('/lego-pointer-small.png') 0 0, pointer;
+  cursor: url('./lego-pointer-small.png') 0 0, pointer;
 }
 
 /* Subtle noise layer */

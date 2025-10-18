@@ -39,7 +39,7 @@ function Home() {
             
             <div className="badge-photo">
               <img 
-                src="/images/profile/pp.jpg" 
+                src="./images/profile/pp.jpg" 
                 alt="Profile"
                 className="photo-placeholder"
               />
