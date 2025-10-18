@@ -1,0 +1,35 @@
+/* CodePanel - profile.json styled window */
+
+.code-panel { 
+  background: var(--color-surface); 
+  border: 1px solid var(--color-border); 
+  border-radius: var(--radius-sm); 
+  box-shadow: var(--shadow-1); 
+  width: 100%; 
+  max-height: 480px; /* Reduced to match badge height more closely */
+  display: flex; 
+  flex-direction: column; 
+  overflow: hidden;
+}
+.code-panel-header { display:flex; align-items:center; gap:.75rem; padding:.4rem .6rem; background: var(--color-surface-alt); border-bottom:1px solid var(--color-border); }
+.traffic { display:flex; align-items:center; gap:.4rem; }
+.dot { width:12px; height:12px; border-radius:50%; background:#444; position:relative; box-shadow: inset 0 1px 2px rgba(0,0,0,.6); }
+.dot.red { background:#FF5F56; }
+.dot.yellow { background:#FFBD2E; }
+.dot.green { background:#27C93F; }
+.panel-title { font-family: var(--font-mono); font-size:.75rem; color: var(--text-dim); flex:1; }
+.copy-btn { font-size:.6rem; padding:.35rem .6rem; }
+.panel-code { 
+  margin: 0; 
+  font-family: var(--font-mono); 
+  font-size: .7rem; 
+  line-height: 1.3; 
+  position: relative; 
+  overflow-y: auto; /* Allow scrolling if content exceeds max-height */
+  flex: 1;
+}
+.panel-code code { display:block; padding:.75rem .9rem .9rem; white-space:pre; }
+.cursor { display:inline-block; width:6px; height:12px; background: var(--color-gold); animation: blink 1s steps(2,start) infinite; vertical-align:baseline; }
+@keyframes blink { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
+
+@media (max-width:768px){ .code-panel { width:100%; } }

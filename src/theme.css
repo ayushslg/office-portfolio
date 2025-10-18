@@ -1,0 +1,52 @@
+:root {
+  /* Primary Colors - Dunder Mifflin Office */
+  --dm-beige: #F5F1E8;
+  --dm-blue: #4A90A4;
+  --paper-white: #FFFFFF;
+  --carpet-gray: #7B7D7D;
+  
+  /* Accent Colors */
+  --dundee-gold: #D4AF37;
+  --beet-red: #8B1538;
+  --safety-orange: #FF6B35;
+  --forest-green: #2D5016;
+  
+  /* Text Colors */
+  --text-primary: #2C2C2C;
+  --text-body: #4A4A4A;
+  --text-muted: #7B7D7D;
+  
+  /* Additional Utility Colors */
+  --border-light: #E0DDD5;
+  --shadow-soft: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  
+  /* Typography */
+  --font-primary: Arial, Helvetica, sans-serif;
+  --font-heading: Arial, Helvetica, sans-serif;
+  --font-accent: 'Comic Sans MS', cursive;
+  --font-mono: 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+}
