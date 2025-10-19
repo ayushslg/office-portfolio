@@ -22,8 +22,8 @@
   --text-accent: var(--color-gold);
 
   /* Typography */
-  --font-sans: 'Arial', 'Helvetica Neue', system-ui, sans-serif;
-  --font-heading: 'Arial Black', Impact, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: var(--font-sans);
   --font-mono: 'Courier New', ui-monospace, SFMono-Regular, monospace;
 
   /* Elevation */
@@ -74,11 +74,11 @@ body::before {
 }
 
 /* Typography */
-h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight: 900; color: var(--text-hi); letter-spacing: .5px; }
-h1 { font-size: 2.4rem; }
-h2 { font-size: 1.9rem; }
-h3 { font-size: 1.55rem; }
-h4 { font-size: 1.25rem; }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight: 600; color: var(--text-hi); letter-spacing: .25px; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.15rem; }
 p { margin-bottom: 1rem; color: var(--text); }
 small { color: var(--text-dim); }
 

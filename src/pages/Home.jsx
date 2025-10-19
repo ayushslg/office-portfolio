@@ -156,7 +156,7 @@ function Home() {
       <section id="contact" className="contact-section">
         <div className="contact-header-block">
           <h2 className="contact-title">Contact Me</h2>
-          <p className="contact-subtitle exact-line">Submit the form below or shoot me an email at: ayushtiwari.slg01@gmail.com</p>
+          <p className="contact-subtitle exact-line">Submit the form below or shoot me an email at: <a href="mailto:ayushtiwari.slg01@gmail.com" className="link-underline">ayushtiwari.slg01@gmail.com</a></p>
         </div>
         <div className="contact-container">
           {/* Left side - Form */}
@@ -232,9 +232,15 @@ function Home() {
               </div>
             </form>
           </div>
-          {/* Right side - Placeholder for future image/animation */}
-          <div className="contact-right placeholder-panel" aria-hidden="true">
-            <div className="asset-placeholder">Future visual goes here</div>
+          {/* Right side - Backdrop Image */}
+          <div className="contact-right backdrop-panel" aria-hidden="true">
+            <img
+              src={`${import.meta.env.BASE_URL}images/backdrop.png`}
+              alt="Decorative Backdrop"
+              className="contact-backdrop-img"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>

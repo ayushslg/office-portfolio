@@ -73,7 +73,7 @@
 /* Badge Info */
 .badge-info { padding:.75rem 1rem 1rem; text-align:center; background: var(--color-surface); border-top:1px solid var(--color-border); }
 
-.badge-name { font-family: var(--font-heading); font-size:1.05rem; font-weight:900; color: var(--text-accent); margin-bottom:.4rem; letter-spacing:.5px; }
+.badge-name { font-family: var(--font-sans); font-size:1rem; font-weight:600; color: var(--text-accent); margin-bottom:.4rem; letter-spacing:.3px; }
 
 .badge-title { font-size:.7rem; color: var(--text); font-weight:600; margin-bottom:.35rem; }
 
@@ -84,7 +84,7 @@
 
 .badge-barcode { font-family: var(--font-mono); font-size:.75rem; color: var(--text-dim); letter-spacing:2px; }
 
-.hero-heading { font-size:2rem; color: var(--text-accent); margin-bottom:.75rem; font-family: var(--font-heading); font-weight:900; letter-spacing:1px; }
+.hero-heading { font-size:1.85rem; color: var(--text-accent); margin-bottom:.7rem; font-family: var(--font-heading); font-weight:600; letter-spacing:.35px; }
 .greeting-typer { display:inline-flex; align-items:center; position:relative; }
 .greeting-text { min-width: 7ch; }
 .greeting-caret { width:10px; height:1.6rem; background: var(--text-accent); margin-left:4px; animation: blink 1s steps(2, start) infinite; border-radius:2px; }
@@ -92,7 +92,7 @@
 
 .hero-subtitle { font-size:.85rem; color: var(--text); font-weight:600; margin-bottom:1rem; letter-spacing:.5px; text-transform:uppercase; }
 
-.hero-description { font-size:.85rem; line-height:1.6; color: var(--text); margin-bottom:1.25rem; }
+.hero-description { font-size:.95rem; line-height:1.62; color: var(--text); margin-bottom:1.3rem; font-family: var(--font-sans); font-weight:400; letter-spacing:.03px; }
 
 /* Spotify Inline */
 .spotify-inline { margin-top:1rem; max-width:460px; padding:.2rem .3rem; background:#101011; border:1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: var(--shadow-1); }
@@ -101,7 +101,7 @@
 /* Stats Section - LEGO Brick Awards */
 .stats-section { margin-bottom:4rem; position:relative; padding:2rem 0 1rem; border-top:1px solid var(--color-border); }
 
-.section-title { text-align:center; font-size:1.4rem; color: var(--text-accent); margin-bottom:2rem; font-family: var(--font-heading); font-weight:900; letter-spacing:.75px; }
+.section-title { text-align:center; font-size:1.3rem; color: var(--text-accent); margin-bottom:2rem; font-family: var(--font-heading); font-weight:600; letter-spacing:.3px; }
 
 .stats-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; }
 
@@ -171,21 +171,24 @@
 }
 
 .contact-title {
-  font-size: 1.4rem; /* Match .section-title size */
+  font-size: 1.3rem; /* Match .section-title size */
   font-family: var(--font-heading);
   color: var(--text-accent);
   margin: 0 0 1.25rem;
-  font-weight: 900;
-  letter-spacing: .75px; /* Match achievements header letter spacing */
+  font-weight: 600;
+  letter-spacing: .35px; /* Lighter spacing */
   line-height: 1.25;
 }
 
 .contact-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
   margin: 0 auto;
   line-height: 1.65;
   max-width: 620px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: .05px;
 }
 
 .contact-subtitle.exact-line { font-style: normal; }
@@ -325,6 +328,39 @@
   background: radial-gradient(circle at 30% 30%, rgba(201,165,71,0.12), transparent 60%);
   mix-blend-mode: overlay;
   opacity: 0.6;
+}
+
+/* Backdrop Image Panel */
+.backdrop-panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px; /* taller to fit full image */
+  padding: 1rem 0;
+}
+
+.contact-backdrop-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain; /* ensure full image visible */
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 0 4px 30px -12px rgba(0,0,0,.55);
+  filter: brightness(.96) contrast(1.05) saturate(1.06);
+  transition: filter .35s var(--ease), box-shadow .35s var(--ease), transform .35s var(--ease);
+}
+
+.contact-backdrop-img:hover {
+  filter: brightness(.99) contrast(1.1) saturate(1.12);
+  box-shadow: 0 8px 38px -14px rgba(0,0,0,.6);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 960px) {
+  .backdrop-panel { min-height: 360px; }
+  .contact-backdrop-img { max-width: 100%; height: auto; }
 }
 
 /* Subtle entrance animation */
