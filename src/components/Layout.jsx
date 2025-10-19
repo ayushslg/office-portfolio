@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 import './Layout.css'
 
 function Layout() {
@@ -14,6 +15,7 @@ function Layout() {
       {/* Navigation - Office Style */}
       <nav className="nav">
         <div className="nav-container">
+          <div className="nav-brand">Ayush Tiwari</div>
           <ul className="nav-list">
             <li className="nav-item">
               <Link 
@@ -55,6 +57,9 @@ function Layout() {
               </button>
             </li>
           </ul>
+          <div className="nav-actions">
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
       

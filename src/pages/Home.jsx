@@ -1,6 +1,7 @@
 import './Home.css'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useTheme } from '../context/ThemeContext'
 import { PaperClip, CornerRibbon } from '../components/OfficeElements'
 import { BatmanLogo, LegoAccent, BatSymbol } from '../components/BatmanElements'
 import '../components/BatmanElements.css'
@@ -11,6 +12,8 @@ import { ThreeGreetingSequence } from '../components/ThreeGreetingSequence'
 
 function Home() {
   const location = useLocation()
+  const { theme } = useTheme()
+  
   useEffect(() => {
     if (location.state && location.state.scrollTo === 'contact') {
       // Small timeout to ensure layout rendered
@@ -46,7 +49,7 @@ function Home() {
             </div>
             
             <div className="badge-info">
-              <div className="badge-name">AYUSH</div>
+              <div className="badge-name">AYUSH TIWARI</div>
               <div className="badge-title">Software Engineer II</div>
               <div className="badge-id">ID: DM-2025-DB</div>
             </div>
@@ -93,7 +96,9 @@ function Home() {
       {/* Quick Stats - Dundee Awards Style */}
       <section className="stats-section">
         <BatSymbol style={{ position: 'absolute', left: '50%', top: '-30px', transform: 'translateX(-50%)' }} />
-        <h2 className="section-title">⚡ My Dark Knight Achievements ⚡</h2>
+        <h2 className="section-title">
+          {theme === 'noir' ? '⚡ My Dark Knight Achievements ⚡' : '🏆 My Dundies 🏆'}
+        </h2>
         <div className="stats-grid">
           <a 
             href="https://icpc.global/ICPCID/KF0AJPIVWM4B" 
@@ -235,7 +240,7 @@ function Home() {
           {/* Right side - Backdrop Image */}
           <div className="contact-right backdrop-panel" aria-hidden="true">
             <img
-              src={`${import.meta.env.BASE_URL}images/backdrop.png`}
+              src={`${import.meta.env.BASE_URL}images/${theme === 'noir' ? 'backdrop.png' : 'office-backdrop.png'}`}
               alt="Decorative Backdrop"
               className="contact-backdrop-img"
               loading="lazy"

@@ -3,9 +3,16 @@
 .layout { min-height:100vh; display:flex; flex-direction:column; background: var(--color-bg); }
 
 /* Navigation - flat bar */
-.nav { background: var(--color-surface); border-bottom: 1px solid var(--color-border); position:fixed; top:0; left:0; right:0; z-index:100; backdrop-filter: blur(8px); background: rgba(20,20,21,0.85); }
-.nav-container { max-width:1200px; margin:0 auto; }
-.nav-list { display:flex; justify-content:center; gap:2rem; list-style:none; padding: .85rem 1rem; margin:0; }
+.nav { background: var(--color-surface); border-bottom: 1px solid var(--color-border); position:fixed; top:0; left:0; right:0; z-index:100; backdrop-filter: blur(8px); transition: background 0.3s ease, border-color 0.3s ease; }
+
+/* Theme-specific nav backgrounds */
+[data-theme="noir"] .nav { background: rgba(20,20,21,0.85); }
+[data-theme="office"] .nav { background: rgba(245,241,232,0.95); }
+
+.nav-container { max-width:1200px; margin:0 auto; display:flex; align-items:center; position:relative; padding: 0 1rem; }
+.nav-brand { font-family: 'Seaweed Script', cursive !important; font-size: 1.1rem; font-weight: 400; font-style: normal; color: var(--color-gold); letter-spacing: 0.5px; position:absolute; left:0.25rem; transition: color 0.3s ease; }
+.nav-list { display:flex; justify-content:center; gap:2rem; list-style:none; padding: .85rem 0; margin:0 auto; }
+.nav-actions { position:absolute; right:1rem; }
 .nav-link {
   position:relative; font-family: var(--font-heading); font-size:.75rem; letter-spacing:1px; text-transform:uppercase;
   text-decoration:none; color: var(--text-dim); padding:.4rem 0; transition: color .2s var(--ease);
@@ -13,7 +20,7 @@
 .nav-link:hover { color: var(--text-hi); }
 .nav-link.active { color: var(--text-accent); }
 .nav-link.active::after, .nav-link:hover::after {
-  content:''; position:absolute; left:0; bottom:-6px; height:2px; width:100%; background: var(--color-gold); transform:scaleX(1);
+  content:''; position:absolute; left:0; bottom:-6px; height:2px; width:100%; background: var(--color-gold); transform:scaleX(1); transition: background 0.3s ease;
 }
 
 /* Main Content */

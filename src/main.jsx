@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 import App from './App.jsx'
 import './index.css'
 
@@ -14,8 +15,10 @@ document.documentElement.style.setProperty('--cursor-url-pointer', `url('${curso
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <BrowserRouter basename={import.meta.env.BASE_URL || '/office-portfolio/'}>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter basename={import.meta.env.BASE_URL || '/office-portfolio/'}>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
 )
