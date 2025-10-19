@@ -281,7 +281,6 @@
   background: linear-gradient(135deg,var(--color-gold) 0%, var(--color-gold-soft) 100%);
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   transition: background 0.25s var(--ease), transform 0.12s var(--ease), box-shadow 0.25s var(--ease);
 }
 

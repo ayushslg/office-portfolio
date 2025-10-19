@@ -42,7 +42,7 @@ function Layout() {
             <li className="nav-item">
               <button
                 className="nav-link nav-button-link"
-                style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                style={{ background: 'none', border: 'none', padding: 0 }}
                 onClick={() => {
                   if (location.pathname !== '/') {
                     navigate('/', { state: { scrollTo: 'contact' } })
