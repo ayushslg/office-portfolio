@@ -236,7 +236,7 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 0.75rem 0.25rem 0.65rem;
+  padding: 0.75rem 0.25rem 0.65rem 0.5rem;
   font-size: 0.95rem;
   font-family: var(--font-sans);
   color: var(--text-hi);
@@ -247,7 +247,7 @@
   transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
 .form-input.minimal,
-.form-textarea.minimal { padding-left: 0; }
+.form-textarea.minimal { padding-left: 0.5rem; }
 .form-input::placeholder,
 .form-textarea::placeholder { color: var(--text-dim); }
 .form-input:focus,
@@ -259,7 +259,7 @@
 .form-textarea { resize: vertical; min-height: 140px; line-height: 1.5; }
 .form-textarea {
   width: 100%;
-  padding: 0.9rem 1rem 0.95rem;
+  padding: 0.9rem 1rem 0.95rem 1rem;
   font-size: 0.95rem;
   font-family: var(--font-sans);
   color: var(--text-hi);

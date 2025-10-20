@@ -210,7 +210,7 @@ function Home() {
                   id="name" 
                   name="name" 
                   required 
-                  placeholder="Name"
+                  placeholder="Your Name"
                   className="form-input minimal"
                   aria-required="true"
                 />
@@ -221,7 +221,7 @@ function Home() {
                   id="email" 
                   name="email" 
                   required 
-                  placeholder="Email"
+                  placeholder="Your Email"
                   className="form-input minimal"
                   aria-required="true"
                 />
@@ -232,7 +232,7 @@ function Home() {
                   name="message" 
                   required 
                   rows="5"
-                  placeholder="Message"
+                  placeholder="Your Message"
                   className="form-textarea minimal"
                   aria-required="true"
                 ></textarea>
@@ -240,7 +240,7 @@ function Home() {
 
               <div className="form-actions">
                 <button type="submit" className="btn-submit">
-                  Send Message
+                  Let's Connect!
                 </button>
               </div>
             </form>
