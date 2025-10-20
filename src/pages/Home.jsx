@@ -34,30 +34,38 @@ function Home() {
         </div>
         
         <div className="badge-container">
-          <div className="id-badge">
-            <div className="badge-header">
-              <div className="company-logo">MICROSOFT</div>
-              <div className="badge-type">EMPLOYEE</div>
+          <a 
+            href="https://www.linkedin.com/in/ayushtiwari323/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="badge-link"
+            aria-label="View Ayush Tiwari's LinkedIn profile"
+          >
+            <div className="id-badge">
+              <div className="badge-header">
+                <div className="company-logo">MICROSOFT</div>
+                <div className="badge-type">EMPLOYEE</div>
+              </div>
+              
+              <div className="badge-photo">
+                <img 
+                  src="./images/profile/pp.jpg" 
+                  alt="Profile"
+                  className="photo-placeholder"
+                />
+              </div>
+              
+              <div className="badge-info">
+                <div className="badge-name">AYUSH TIWARI</div>
+                <div className="badge-title">Software Engineer II</div>
+                <div className="badge-id">ID: DM-2025-DB</div>
+              </div>
+              
+              <div className="badge-footer">
+                <div className="badge-barcode">||||||||||||||||||||</div>
+              </div>
             </div>
-            
-            <div className="badge-photo">
-              <img 
-                src="./images/profile/pp.jpg" 
-                alt="Profile"
-                className="photo-placeholder"
-              />
-            </div>
-            
-            <div className="badge-info">
-              <div className="badge-name">AYUSH TIWARI</div>
-              <div className="badge-title">Software Engineer II</div>
-              <div className="badge-id">ID: DM-2025-DB</div>
-            </div>
-            
-            <div className="badge-footer">
-              <div className="badge-barcode">||||||||||||||||||||</div>
-            </div>
-          </div>
+          </a>
   </div>
   <div className="codepanel-wrapper">
     <CodePanel />

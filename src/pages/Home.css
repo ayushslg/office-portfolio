@@ -47,8 +47,28 @@
   z-index: 1; 
 }
 
+/* Badge Link Wrapper */
+.badge-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease);
+}
+
+.badge-link:hover {
+  transform: translateY(-4px);
+}
+
+.badge-link:hover .id-badge {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border-color: var(--color-gold);
+}
+
+.badge-link:active {
+  transform: translateY(-2px);
+}
+
 /* LEGO Brick styled ID Badge */
-.id-badge { width:240px; background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: var(--shadow-1); position:relative; padding-top:18px; overflow:hidden; }
+.id-badge { width:240px; background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: var(--shadow-1); position:relative; padding-top:18px; overflow:hidden; transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
 
 .id-badge::before { content:''; position:absolute; top:0; left:0; right:0; height:10px; background:radial-gradient(circle at 6px 5px,#232324 2px,transparent 3px), radial-gradient(circle at 22px 5px,#232324 2px,transparent 3px); background-size:32px 10px; background-repeat: repeat-x; opacity:.45; }
 
