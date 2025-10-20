@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import './Layout.css'
@@ -5,27 +6,60 @@ import './Layout.css'
 function Layout() {
   const location = useLocation()
   const navigate = useNavigate()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location.pathname])
   
   const isActive = (path) => {
     return location.pathname === path
   }
 
+  const navListId = 'primary-navigation'
+
+  const handleNavHomeClick = () => {
+    setIsMenuOpen(false)
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleContactClick = () => {
+    setIsMenuOpen(false)
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: 'contact' } })
+    } else {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="layout">
       {/* Navigation - Office Style */}
-      <nav className="nav">
+      <nav className={`nav ${isMenuOpen ? 'nav--open' : ''}`}>
         <div className="nav-container">
           <div className="nav-brand">Ayush Tiwari</div>
-          <ul className="nav-list">
+          <button
+            type="button"
+            className={`nav-menu-toggle ${isMenuOpen ? 'nav-menu-toggle--active' : ''}`}
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+            aria-controls={navListId}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <span className="nav-menu-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <ul className={`nav-list ${isMenuOpen ? 'nav-list--open' : ''}`} id={navListId}>
             <li className="nav-item">
               <Link 
                 to="/" 
                 className={`nav-link ${isActive('/') ? 'active' : ''}`}
-                onClick={() => {
-                  if (location.pathname === '/') {
-                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-                  }
-                }}
+                onClick={handleNavHomeClick}
               >
                 🏠 Home
               </Link>
@@ -34,6 +68,7 @@ function Layout() {
               <Link 
                 to="/blogs" 
                 className={`nav-link ${isActive('/blogs') ? 'active' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 📝 Tech Blogs
               </Link>
@@ -42,6 +77,7 @@ function Layout() {
               <Link 
                 to="/papers" 
                 className={`nav-link ${isActive('/papers') ? 'active' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 📄 PaperShelf
               </Link>
@@ -50,13 +86,7 @@ function Layout() {
               <button
                 className="nav-link nav-button-link"
                 style={{ background: 'none', border: 'none', padding: 0 }}
-                onClick={() => {
-                  if (location.pathname !== '/') {
-                    navigate('/', { state: { scrollTo: 'contact' } })
-                  } else {
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
+                onClick={handleContactClick}
               >
                 📧 Contact
               </button>
@@ -67,6 +97,11 @@ function Layout() {
           </div>
         </div>
       </nav>
+
+      <div
+        className={`nav-overlay ${isMenuOpen ? 'nav-overlay--visible' : ''}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
 
       {/* Floating Social Sidebar */}
       <div className="social-sidebar">
