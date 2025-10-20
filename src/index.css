@@ -88,7 +88,7 @@ body {
 }
 
 /* Batman cursor on clickable elements */
-a, button, .btn, [role="button"], input[type="button"], input[type="submit"], input[type="checkbox"], input[type="radio"] {
+a, button, .btn, [role="button"], input[type="button"], input[type="submit"], input[type="checkbox"], input[type="radio"], .sidebar-link {
   cursor: var(--cursor-url-pointer, pointer);
 }
 
